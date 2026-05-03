@@ -55,7 +55,6 @@ MONGODB_URI="mongodb+srv://<user>:<password>@cluster.mongodb.net/nexalavoro"
 
 # Configurazione Email (Resend)
 RESEND_API_KEY="tua_api_key_resend"
-EMAIL_FROM="Resend <onboarding@resend.dev>"
 ```
 
 ### 4. Avvia il server di sviluppo

@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #060b14;
+  --bg-secondary: #0d1525;
+  --bg-card: #111c30;
+  --bg-card-hover: #162238;
+  --text-primary: #e8edf5;
+  --text-secondary: #b0bfd1;
+  --text-muted: #7a8ba3;
+  --accent-cyan: #00e5ff;
+  --accent-blue: #4d7cff;
+  --accent-purple: #a855f7;
+  --accent-green: #22d3a0;
+  --accent-amber: #f59e0b;
+  --accent-rose: #f43f5e;
+  --gradient-hero: linear-gradient(135deg, #00e5ff 0%, #4d7cff 40%, #a855f7 100%);
+  --border-subtle: rgba(255,255,255,0.06);
+  --border-glow: rgba(77,124,255,0.35);
+  --shadow-card: 0 8px 40px rgba(0,0,0,0.5), 0 1px 3px rgba(255,255,255,0.03);
+}
+
+@layer base {
+  body {
+    @apply bg-primary text-text-primary font-sans antialiased;
+  }
+  * {
+    @apply box-border m-0 p-0;
+  }
+}
+@layer components {
+  .container {
+    @apply w-full max-w-7xl mx-auto px-6 lg:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-base transition-all duration-300;
+  }
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-cyan to-blue via-purple text-white shadow-lg shadow-blue/30 hover:scale-105;
+  }
+  .btn-secondary {
+    @apply btn border border-white/20 text-text-primary hover:border-cyan hover:bg-cyan/5;
+  }
+  .section-label {
+    @apply uppercase tracking-widest text-xs font-bold text-cyan mb-2 block;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-black tracking-tight text-text-primary mb-4;
+  }
+  .section-desc {
+    @apply text-text-secondary max-w-xl text-lg mb-8;
+  }
+  .card {
+    @apply bg-card border border-[color:var(--border-subtle)] rounded-2xl p-6 shadow-[var(--shadow-card)] transition-all hover:border-[color:var(--border-glow)] hover:-translate-y-1;
+  }
+  /* Animations */
+  @keyframes pulse-glow {
+    0%,100% { box-shadow: 0 0 0 0 rgba(77,124,255,0.5); }
+    50% { box-shadow: 0 0 0 14px rgba(77,124,255,0); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeInUp {
+    animation: fadeInUp 0.7s ease-out both;
+  }
+}
